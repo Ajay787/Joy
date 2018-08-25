@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Admin Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	min-height: 100%;
+	height: 101vh;
+}
+
+#particles-js {
+	background-image: url('../image1.jpg');
+	height: 100%;
+}
+
+.container {
+	position: absolute;
+	top: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="particles-js">
+</div>
+	
+		<div style="position: absolute;top:0px">
+			<form th:action="@{/logout}" method="get">
+				<button class="btn btn-md btn-danger btn-block" name="registration"
+					type="Submit">Logout</button>
+			</form>    
+			
+			<div class="panel-group" style="margin-top:40px">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span th:utext="${userName}"></span>
+					</div>
+					<div class="panel-body">
+						<img th:src="@{/images/BingWallpaper.jpg}" class="img-responsive center-block" width="600" height="600" alt="Bing" /> 
+					</div>
+					<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+					<a type="button" class="btn btn-md" href="index.html">UIx</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+	
+</body>
+<script type="text/javascript">
+/* particlesJS.load('particles-js', 'particles.json',
+function(){
+    console.log('particles.json loaded...')
+}) */
+particlesJS("particles-js", {
+	  "particles": {
+	    "number": {
+	      "value": 100,
+	      "density": {
+	        "enable": true,
+	        "value_area": 800
+	      }
+	    },
+	    "color": {
+	      "value": "#ffffff"
+	    },
+	    "shape": {
+	      "type": "circle",
+	      "stroke": {
+	        "width": 0,
+	        "color": "#000000"
+	      },
+	      "polygon": {
+	        "nb_sides": 5
+	      },
+	      "image": {
+	        "src": "img/github.svg",
+	        "width": 100,
+	        "height": 100
+	      }
+	    },
+	    "opacity": {
+	      "value": 0.5,
+	      "random": false,
+	      "anim": {
+	        "enable": false,
+	        "speed": 1,
+	        "opacity_min": 0.1,
+	        "sync": false
+	      }
+	    },
+	    "size": {
+	      "value": 2,
+	      "random": true,
+	      "anim": {
+	        "enable": false,
+	        "speed": 40,
+	        "size_min": 0.1,
+	        "sync": false
+	      }
+	    },
+	    "line_linked": {
+	      "enable": true,
+	      "distance": 150,
+	      "color": "#ffffff",
+	      "opacity": 0.4,
+	      "width": 1
+	    },
+	    "move": {
+	      "enable": true,
+	      "speed": 2,
+	      "direction": "none",
+	      "random": false,
+	      "straight": false,
+	      "out_mode": "out",
+	      "bounce": false,
+	      "attract": {
+	        "enable": false,
+	        "rotateX": 600,
+	        "rotateY": 1200
+	      }
+	    }
+	  },
+	  "interactivity": {
+	    "detect_on": "canvas",
+	    "events": {
+	      "onhover": {
+	        "enable": true,
+	        "mode": "grab"
+	      },
+	      "onclick": {
+	        "enable": true,
+	        "mode": "push"
+	      },
+	      "resize": true
+	    },
+	    "modes": {
+	      "grab": {
+	        "distance": 150,
+	        "line_linked": {
+	          "opacity": 1
+	        }
+	      },
+	      "bubble": {
+	        "distance": 400,
+	        "size": 40,
+	        "duration": 2,
+	        "opacity": 8,
+	        "speed": 3
+	      },
+	      "repulse": {
+	        "distance": 200,
+	        "duration": 0.4
+	      },
+	      "push": {
+	        "particles_nb": 4
+	      },
+	      "remove": {
+	        "particles_nb": 2
+	      }
+	    }
+	  },
+	  "retina_detect": true
+	});
+	
+
+	//requestAnimationFrame('update');
+
+</script>
+</html>
