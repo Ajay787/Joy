@@ -25,6 +25,10 @@ public class LoginController {
 	public String login(){
 		return "login";
 	}
+	@RequestMapping(value={"chat"}, method = RequestMethod.GET)
+	public String chat(){
+		return "chat/index";
+	}
 	
 	@RequestMapping(value="/registration", method = RequestMethod.GET)
 	public ModelAndView registration(){

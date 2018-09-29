@@ -64,7 +64,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.accessDeniedPage("/access-denied");*/
 		http.
 		authorizeRequests()
-			.antMatchers("/").permitAll()
+			.antMatchers("/","/chat").permitAll()
 			.antMatchers("/login").permitAll()
 			.antMatchers("/env").permitAll()
 			.antMatchers("/registration").permitAll()
