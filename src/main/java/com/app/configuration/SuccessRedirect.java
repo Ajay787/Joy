@@ -39,7 +39,7 @@ public class SuccessRedirect implements AuthenticationSuccessHandler {
 		if (hasUserRole) {
 			redirectStrategy.sendRedirect(arg0, arg1, "/welcome");
 		} else if (hasAdminRole) {
-			redirectStrategy.sendRedirect(arg0, arg1, "/admin/home");
+			redirectStrategy.sendRedirect(arg0, arg1, "/admin/index.html");
 		} else {
 			throw new IllegalStateException();
 		}

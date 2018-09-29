@@ -19,17 +19,11 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping(value="home", method = RequestMethod.GET)
-	public String home(ModelMap modelmap){
+	@RequestMapping(value="index.html", method=RequestMethod.GET)
+	public String uixHome(ModelMap modelMap) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
-		modelmap.addAttribute("userName","Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-		modelmap.addAttribute("adminMessage","Content Available Only for Users with Admin Role");
-		return "admin/home";
-	}
-	
-	@RequestMapping(value="index.html", method=RequestMethod.GET)
-	public String uixHome() {
+		modelMap.addAttribute("userName","Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		return "admin/index";
 	}
 	
