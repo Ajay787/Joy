@@ -37,6 +37,10 @@ public class AdminController {
 	public String about() {
 		return "admin/about";
 	}
+	@RequestMapping(value="teachers.html", method=RequestMethod.GET)
+	public String teacher() {
+		return "admin/teachers";
+	}
 	
 	@RequestMapping(value="contact.html", method=RequestMethod.GET)
 	public String contact() {

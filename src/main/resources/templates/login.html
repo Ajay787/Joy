@@ -1,36 +1,253 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-
 <head>
-	<title>Spring Security Tutorial</title>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+	<title>Login V4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="icon" type="image/png" th:href="@{/images/icons/favicon.ico}"/>
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min.css?v1}">
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/iconic/css/material-design-iconic-font.min.css}">
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/animate/animate.css}">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/css-hamburgers/hamburgers.min.css}">
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/animsition/css/animsition.min.css}">
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/select2/select2.min.css}">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/daterangepicker/daterangepicker.css}">
+<!--============================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/util.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login2.css}">
+<!--============================================================================-->
+<style>
+div#particles-js  {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+</style>
+</head>
 <body>
-	<form th:action="@{/registration}" method="get">
-		<button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button>
-	</form>	
 	
-	<div class="container">
-		<img th:src="@{/images/login.jpg}" class="img-responsive center-block" width="300" height="300" alt="Logo" />
-		<form th:action="@{/login}" method="POST" class="form-signin">
-			<h3 class="form-signin-heading" th:text="Welcome"></h3>
-			<br/>
-			 
-			<input type="text" id="email" name="email"  th:placeholder="Email"
-				class="form-control" /> <br/> 
-			<input type="password"  th:placeholder="Password"
-				id="password" name="password" class="form-control" /> <br /> 
-				
-			<div align="center" th:if="${param.error}">
-				<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
-			</div>
-			<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" th:text="Login"></button>
-		</form>
+	<div class="limiter">
+	<div id="particles-js">
 	</div>
-</body>
+		<div class="container-login100" th:style="'background-image: url('+@{/images/bg-01.jpg}+');'">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" th:action="@{/login}" method="POST">
+					<span class="login100-form-title p-b-49">
+						Login
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" id="email" name="email" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" id="password" name="password" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					<div class="text-right p-t-8 p-b-31">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="Submit" >
+								Login
+							</button>
+						</div>
+					</div>
+
+					<!-- <div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Or Sign Up Using
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div> -->
+
+					<div class="flex-col-c p-t-135">
+						<span class="txt1 p-b-17">
+							Or Sign Up Using
+						</span>
+
+						<a th:href="@{/registration}" style="z-index: 900" class="txt2">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--============================================================================-->
+	<script th:src="@{/vendor/jquery/jquery-3.2.1.min.js}"></script>
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!--============================================================================-->
+	<script th:src="@{/vendor/animsition/js/animsition.min.js}"></script>
+<!--============================================================================-->
+	<script th:src="@{/vendor/bootstrap/js/popper.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<!--============================================================================-->
+	<script th:src="@{/vendor/select2/select2.min.js}"></script>
+<!--============================================================================-->
+	<script th:src="@{/vendor/daterangepicker/moment.min.js}"></script>
+	<script th:src="@{/vendor/daterangepicker/daterangepicker.js}"></script>
+<!--============================================================================-->
+	<script th:src="@{/vendor/countdowntime/countdowntime.js}"></script>
+<!--============================================================================-->
+	<script th:src="@{/js/main.js}"></script>
+	
+
+</body><script type="text/javascript">
+/* particlesJS.load('particles-js', 'particles.json',
+function(){
+    console.log('particles.json loaded...')
+}) */
+particlesJS("particles-js", {
+	  "particles": {
+	    "number": {
+	      "value": 150,
+	      "density": {
+	        "enable": true,
+	        "value_area": 800
+	      }
+	    },
+	    "color": {
+	      "value": "#ffffff"
+	    },
+	    "shape": {
+	      "type": "circle",
+	      "stroke": {
+	        "width": 0,
+	        "color": "#000000"
+	      },
+	      "polygon": {
+	        "nb_sides": 5
+	      },
+	      "image": {
+	        "src": "img/github.svg",
+	        "width": 100,
+	        "height": 100
+	      }
+	    },
+	    "opacity": {
+	      "value": 0.5,
+	      "random": false,
+	      "anim": {
+	        "enable": false,
+	        "speed": 1,
+	        "opacity_min": 0.1,
+	        "sync": false
+	      }
+	    },
+	    "size": {
+	      "value": 2,
+	      "random": true,
+	      "anim": {
+	        "enable": false,
+	        "speed": 40,
+	        "size_min": 0.1,
+	        "sync": false
+	      }
+	    },
+	    "line_linked": {
+	      "enable": true,
+	      "distance": 150,
+	      "color": "#ffffff",
+	      "opacity": 0.4,
+	      "width": 1
+	    },
+	    "move": {
+	      "enable": true,
+	      "speed": 2,
+	      "direction": "none",
+	      "random": false,
+	      "straight": false,
+	      "out_mode": "out",
+	      "bounce": false,
+	      "attract": {
+	        "enable": false,
+	        "rotateX": 600,
+	        "rotateY": 1200
+	      }
+	    }
+	  },
+	  "interactivity": {
+	    "detect_on": "canvas",
+	    "events": {
+	      "onhover": {
+	        "enable": true,
+	        "mode": "grab"
+	      },
+	      "onclick": {
+	        "enable": true,
+	        "mode": "push"
+	      },
+	      "resize": true
+	    },
+	    "modes": {
+	      "grab": {
+	        "distance": 150,
+	        "line_linked": {
+	          "opacity": 1
+	        }
+	      },
+	      "bubble": {
+	        "distance": 400,
+	        "size": 40,
+	        "duration": 2,
+	        "opacity": 8,
+	        "speed": 3
+	      },
+	      "repulse": {
+	        "distance": 200,
+	        "duration": 0.4
+	      },
+	      "push": {
+	        "particles_nb": 4
+	      },
+	      "remove": {
+	        "particles_nb": 2
+	      }
+	    }
+	  },
+	  "retina_detect": true
+	});
+	
+
+	//requestAnimationFrame('update');
+
+</script>
 </html>
